@@ -5,9 +5,6 @@ int main()
 {
     string s;
     cin>>s;
-
-
     cout<<"Hello, "<<s<<endl;
-
     return 0;
 }
