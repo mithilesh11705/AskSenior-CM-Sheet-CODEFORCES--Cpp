@@ -1,0 +1,62 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int number(string n) {
+    int k = 0;
+    for (char ch : n) {
+        k = k * 10 + (ch - '0'); // Directly convert characters to integers
+    }
+    return k;
+}
+
+int main() {
+    string a;
+    cin >> a;
+
+    int i = 0;
+    string n1;
+
+    // Collect the first number before the operator
+    while (i < a.size() && (a[i] != '+' && a[i] != '-' && a[i] != '*' && a[i] != '/')) {
+        n1.push_back(a[i]);
+        i++;
+    }
+
+    // Check for an operator in the input
+    if (i == a.size()) {
+        cout << -1 << endl; // No operator found
+        return 0;
+    }
+
+    char op = a[i]; // Store the operator
+    i++; // Move to the next character after the operator
+
+    string n2;
+    // Collect the second number after the operator
+    while (i < a.size()) {
+        n2.push_back(a[i]);
+        i++;
+    }
+
+    int k1 = number(n1);
+    int k2 = number(n2);
+
+    // Perform the operation based on the operator
+    if (op == '+') {
+        cout << k1 + k2 << endl;
+    } else if (op == '-') {
+        cout << k1 - k2 << endl;
+    } else if (op == '*') {
+        cout << k1 * k2 << endl;
+    } else if (op == '/') {
+        if (k2 == 0) {
+            cout << "Division by zero error" << endl;
+        } else {
+            cout << k1 / k2 << endl;
+        }
+    } else {
+        cout << -1 << endl; // Invalid operator
+    }
+
+    return 0;
+}
