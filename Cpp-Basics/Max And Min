@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int a,b,c;
+	cin>>a>>b>>c;
+
+	int m1=min(a,b);
+	int m2=min(m1,c);
+	int m3=max(a,b);
+	int m4=max(m3,c);
+
+	cout<<m2<<" "<<m4<<endl;
+	return 0;
+}
