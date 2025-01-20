@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{   
+    char c;
+
+    cin>>c;
+    if((c>=48 && c <=58))
+        cout<<"IS DIGIT";
+    else if(c>=65 && c<=91)
+        cout<<"ALPHA"<<"\n"<<"IS CAPITAL";
+    else
+        cout<<"ALPHA"<<"\n"<<"IS SMALL";
+    
+    return 0;
+}
